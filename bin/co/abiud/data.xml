@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- services -->
+
+	<bean id="emp1" class="co.abiud.EmployeeInformation" init-method="myInit" destroy-method="myDestroy">
+		<property name="eid" value = "122"/>
+		<property name="ename" value ="Abiud Shiundu"/>
+        <constructor-arg ref="addrs"></constructor-arg>
+        <!--property name="eaddress" ref="addrs"/>-->
+        <!-- setter-->
+		<!-- additional collaborators and configuration for this bean go here -->
+	</bean>
+    <bean id="emp2" class="co.abiud.EmployeeInformation" init-method="myInit" destroy-method="myDestroy">
+		<property name="eid" value ="123"/>
+		<property name="ename" value ="Duke Chale"/>
+        <property name="eaddress" value ="Mowlem"/>
+		<!-- additional collaborators and configuration for this bean go here -->
+	</bean>
+
+    <bean id="emp3" class="co.abiud.EmployeeInformation" init-method="myInit" destroy-method="myDestroy">
+		<property name="eid" value ="124"/>
+		<property name="ename" value ="Ben Sukusa"/>
+        <property name="eaddress" value ="Saika"/>
+		<!-- additional collaborators and configuration for this bean go here -->
+	</bean>
+	<bean id="addrs" class="co.abiud.Address" init-method="myInit" destroy-method="myDestroy">
+		<property name="city" value ="Nairobi"/>
+		<property name="state" value ="Kenya"/>
+        <property name="zipCode" value ="00400"/>
+		<!-- additional collaborators and configuration for this bean go here -->
+	</bean>
+	<!-- more bean definitions for services go here -->
+
+</beans>
